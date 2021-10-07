@@ -1,6 +1,6 @@
 echo 'Hello World!!!'
 print("My name is Pranav")
-n=10
+n=5
 if (n>9){
   print("The number is greater than 9")
   }
