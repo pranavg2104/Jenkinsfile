@@ -4,3 +4,6 @@ n=10
 if (n>9){
   print("The number is greater than 9")
   }
+else{
+print("The number is less than 9")
+}
