@@ -11,7 +11,7 @@ def getLocationAndTime(location):
     return sorted(store.items(), key=lambda x:x[1])
 
 def deleteFile(files,nFiles):
-    keep=len(files)-int(nFiles)
+    keep=len(files)-nFiles
     for i in range(0,keep):
         os.remove(files[i][0])
 
