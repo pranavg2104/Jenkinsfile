@@ -15,7 +15,7 @@ def deleteFile(files):
         os.remove(files[i][0])
 
 if os.path.exists("D:\Output"):
-    files=getLocationAndTime(loc)
+    files=getLocationAndTime("D:\Output")
     deleteFile(files)
 else:
     print("Enter a valid file location")
