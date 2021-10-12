@@ -13,8 +13,7 @@ def deleteFile(files):
     keep=len(files)-5
     for i in range(0,keep):
         os.remove(files[i][0])
-loc=input()
-if os.path.exists(loc):
+if os.path.exists("D:\Output"):
     files=getLocationAndTime(loc)
     deleteFile(files)
 else:
