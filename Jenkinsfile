@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                python newDelFile.py
+                bat 'python newDelFile.py'
                 echo 'Building..'
             }
         }
