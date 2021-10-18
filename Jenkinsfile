@@ -4,8 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat "python newDelFile.py"
-                echo 'Building..'
+                script{
+                    def path =[]
+                    path = readJSON file : "$ {}"
+                    bat "python newDelFile.py"
+                    echo 'Building..'
             }
         }
         stage('Test') {
