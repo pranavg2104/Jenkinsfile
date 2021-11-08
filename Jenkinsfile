@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             agent {
                 any {
-                    image 'python:2-alpine' 
+                    image '4246fb19839f' 
                 }
             }
             steps {
