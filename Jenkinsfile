@@ -8,8 +8,9 @@ pipeline {
                     sh """chmod +x -R ${env.WORKSPACE}"""
                     //def path ='[]'
                     //path = readJSON file : "./location.json"
+                    $ python newDelFile.py
                     
-                    sh  """chmod u+rx ./newDelFile.py"""
+                    //sh  """chmod u+rx ./newDelFile.py"""
                     echo 'Building..'
             }
         }
