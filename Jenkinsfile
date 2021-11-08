@@ -5,9 +5,9 @@ pipeline {
         stage('Build') {
             steps{
             script{
-                    //def path ='[]'
-                    //path = readJSON file : "${D:/jenkinsProject}\\location.json"
-                    //bat """python "${path.build.location}newDelFile.py"""
+                    def path ='[]'
+                    path = readJSON file : "${D:/jenkinsProject}\\location.json"
+                    bat """python "${path.build.location}newDelFile.py"""
                     echo 'Building..'
             }
         }
