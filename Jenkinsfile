@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'docker'
+    }
 
     stages {
         stage('Build') {
@@ -7,7 +9,7 @@ pipeline {
                 script{
                     
                     sh """chmod +x -R ${env.WORKSPACE}"""
-                    sh '/home/Python ./newDelFile.py'
+                    sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt && python ./newDelFile.py'
                     //def path ='[]'
                     //path = readJSON file : "./location.json                
                     //sh  """chmod u+rx ./newDelFile.py"""
