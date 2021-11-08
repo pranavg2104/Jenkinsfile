@@ -7,7 +7,7 @@ pipeline {
                 script{
                     echo 'Hello World'                   
                     sh """chmod +x -R ${env.WORKSPACE}"""
-                    cd ./Jenkinsfile
+                    cd ../
                     sh './newDelFile.py'
                     //def path ='[]'
                     //path = readJSON file : "./location.json                
