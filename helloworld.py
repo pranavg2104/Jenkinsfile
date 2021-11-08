@@ -1,1 +1,1 @@
-print("HI")
+echo "print"
