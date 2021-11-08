@@ -5,11 +5,11 @@ pipeline {
         stage('Build') {
             steps{
                 script{
-                    sh """chmod +x -R ${env.WORKSPACE}"""
-                    //def path ='[]'
-                    //path = readJSON file : "./location.json"
-                    $ python newDelFile.py
                     
+                    sh """chmod +x -R ${env.WORKSPACE}"""
+                    sh 'python newDelFile.py'
+                    //def path ='[]'
+                    //path = readJSON file : "./location.json                
                     //sh  """chmod u+rx ./newDelFile.py"""
                     echo 'Building..'
             }
