@@ -6,7 +6,7 @@ pipeline {
             steps{
                 script{
                     
-                    //sh """chmod +x -R ${env.WORKSPACE}"""
+                    sh """chmod +x -R ${env.WORKSPACE}"""
                     sh 'newDelFile.py'
                     //def path ='[]'
                     //path = readJSON file : "./location.json                
