@@ -7,7 +7,7 @@ pipeline {
             script{
                     //def path ='[]'
                     //path = readJSON file : "${D:/jenkinsProject}\\location.json"
-                sh """${WORKSPACE}/python helloworld.py"""
+                    bat """python helloworld.py"""
                     echo 'Building..'
             }
         }
