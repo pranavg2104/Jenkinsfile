@@ -1,10 +1,10 @@
 pipeline {
-    agent none 
+    agent any 
     stages {
         stage('Build') { 
             agent {
                 any {
-                    image '4246fb19839f' 
+                    image 'python: 4246fb19839f' 
                 }
             }
             steps {
