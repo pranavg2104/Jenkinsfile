@@ -8,7 +8,7 @@ pipeline {
                     //def path ='[]'
                     //path = readJSON file : "${D:/jenkinsProject}\\location.json"
                     sh """chmod +x -R ${env.WORKSPACE}"""
-                    sh '''./helloworld.py'''
+                    sh '''./python helloworld.py'''
                     echo 'Building..'
             }
         }
