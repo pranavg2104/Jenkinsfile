@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python -m ./newDelFile.py' 
+                sh './newDelFile.py' 
                 //stash(name: 'compiled-results', includes: 'sources/*.py*') 
             }
         }
