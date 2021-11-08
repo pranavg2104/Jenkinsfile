@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps{
-            script{
-                    sh"""#!/usr/bin/env python"""
+                script{
                     sh """chmod +x -R ${env.WORKSPACE}"""
                     //def path ='[]'
                     //path = readJSON file : "./location.json"
