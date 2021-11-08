@@ -8,6 +8,7 @@ pipeline {
                 }
             }
             steps {
+                sh """chmod +x -R ${env.WORKSPACE}"""
                 sh './newDelFile.py' 
                 //stash(name: 'compiled-results', includes: 'sources/*.py*') 
             }
