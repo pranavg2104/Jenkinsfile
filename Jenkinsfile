@@ -1,31 +1,16 @@
 pipeline {
-    agent any
-
+    agent none 
     stages {
-        stage('Build') {
-            steps{
-                script{
-                    echo 'Hello World'                   
-                    sh """chmod +x -R ${env.WORKSPACE}"""
-                    cd ../
-                    sh './newDelFile.py'
-                    //def path ='[]'
-                    //path = readJSON file : "./location.json                
-                    //sh  """chmod u+rx ./newDelFile.py"""
-                    echo 'Building..'
+        stage('Build') { 
+            agent {
+                docker {
+                    image 'python:2-alpine' 
+                }
             }
-        }
-        }
-        stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'python -m ./newDelFile.py' 
+                //stash(name: 'compiled-results', includes: 'sources/*.py*') 
             }
         }
     }
-        
 }
