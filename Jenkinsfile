@@ -5,9 +5,16 @@ pipeline {
         stage('Build') {
             steps{
                 script{
+                    if(isUnix()){
+                        sh 'python ./newDelFile.py'
+                    }
+                    else
+                    {
+                        bat 'python newDelFile.py'
+                    }
                     
-                    sh """chmod +x -R ${env.WORKSPACE}"""
-                    sh 'cd C:/Python python./newDelFile.py'
+                    //sh """chmod +x -R ${env.WORKSPACE}"""
+                    //sh 'cd C:/Python python./newDelFile.py'
                     //def path ='[]'
                     //path = readJSON file : "./location.json                
                     //sh  """chmod u+rx ./newDelFile.py"""
