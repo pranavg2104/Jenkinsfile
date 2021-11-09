@@ -4,8 +4,8 @@ pipeline {
         stage('Build') { 
             agent {
                 docker {
-                    image 'python:alpine'
-                    args '-u root'
+                    image 'python:latest'
+                    //args '-u root'
                 }
             }
             steps {
