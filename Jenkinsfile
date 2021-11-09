@@ -2,9 +2,11 @@ pipeline {
     agent none
     stages {
         stage('Build') { 
-            agent{
-                docker{
-                    image 'python:2-alpine'}
+            agent {
+                docker {
+                    image 'python:alpine'
+                    args '-u root'
+                }
             }
             steps {
                 //sh """chmod +x -R ${env.WORKSPACE}"""
