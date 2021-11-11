@@ -4,7 +4,7 @@ pipeline {
             stage('Build') {
                 agent {
                     docker {
-                            filename ' Dockerfile'
+                            image 'python:latest'
                      }
                 }
                 steps{
