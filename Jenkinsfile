@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'apt-get install pip'
+                sh 'sudo apt-get install pip'
                 sh """chmod +x -R ${env.WORKSPACE}"""
                 sh 'python ./helloworld.py'
                 //sh 'docker run --rm helloworld.py'
