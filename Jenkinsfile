@@ -10,7 +10,7 @@ pipeline {
                 steps{
                     script{
                         echo 'Hello World'
-                        sh 'sudo apt-get install python'
+                        sh 'sudo su apt-get install python'
                         sh 'chmod +x -R ${env.WORKSPACE}'
                         sh 'python ./helloworld.py'
                                     //def path ='[]'
