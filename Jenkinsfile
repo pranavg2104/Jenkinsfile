@@ -10,8 +10,7 @@ pipeline {
                 steps{
                     script{
                         echo 'Hello World'
-                        sh """chmod +x -R ${env.WORKSPACE}"""
-                        sh '
+                        sh 'chmod +x -R ${env.WORKSPACE}'
                         sh 'python ./helloworld.py'
                                     //def path ='[]'
                         //path = readJSON file : "./location.json
