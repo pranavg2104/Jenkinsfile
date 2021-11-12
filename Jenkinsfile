@@ -11,8 +11,9 @@ pipeline {
                     script{
                         echo 'Hello World'
                         //sh 'yum install python'
-                        sh 'Dockerfile'
+                    
                         sh 'chmod +x -R ${env.WORKSPACE}'
+                         sh './Dockerfile'
                         sh './usr/localpython.exe ./helloworld.py'
                                     //def path ='[]'
                         //path = readJSON file : "./location.json
