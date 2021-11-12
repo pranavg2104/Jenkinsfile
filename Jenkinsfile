@@ -2,11 +2,11 @@ pipeline {
     agent any
         stages {
             stage('Build') {
-                agent{
+                /*agent{
                     label 'docker' {
                         iamge 'python:latest'
                     }
-                }
+                }*/
                 steps{
                     script{
                         echo 'Hello World'
