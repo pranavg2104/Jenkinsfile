@@ -10,9 +10,9 @@ pipeline {
                 steps{
                     script{
                         echo 'Hello World'
-                        sh 'yum install python'
+                        //sh 'yum install python'
                         sh 'chmod +x -R ${env.WORKSPACE}'
-                        sh 'python ./helloworld.py'
+                        sh './usr/localpython.exe ./helloworld.py'
                                     //def path ='[]'
                         //path = readJSON file : "./location.json
                         //sh """chmod u+rx ./newDelFile.py"""
