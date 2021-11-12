@@ -11,7 +11,7 @@ pipeline {
                     script{
                         echo 'Hello World'
                         sh """chmod +x -R ${env.WORKSPACE}"""
-                        sh 'python ./helloworld.py'
+                        sh 'C:\Python\python.exe ./helloworld.py'
                                     //def path ='[]'
                         //path = readJSON file : "./location.json
                         //sh """chmod u+rx ./newDelFile.py"""
