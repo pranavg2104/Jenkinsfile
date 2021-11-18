@@ -20,7 +20,7 @@ pipeline {
                 steps{
                     script{
                         echo 'Deploying...'
-                        sh 'python helloworld.py'
+                        //sh 'python helloworld.py'
                     }
                 }
             }
