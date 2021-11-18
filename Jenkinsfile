@@ -20,7 +20,7 @@ pipeline {
                 steps{
                     script{
                         echo 'Deploying...'
-                     
+                        echo 'Done automatic trigger....'
                     }
                 }
             }
