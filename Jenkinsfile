@@ -32,7 +32,7 @@ pipeline {
     always {
        mail to: 'rogerace339@gmail.com', cc: 'pranavgovekar2015@gmail.com',
           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
-          body: "${currentBuild.log} has result ${currentBuild.result}"
+          body: "${env.BUILD_URL} has result ${currentBuild.result}"
     }
   }
     }
