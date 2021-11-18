@@ -20,7 +20,7 @@ pipeline {
                 steps{
                     script{
                         echo 'Deploying...'
-                    
+                        bet"""python helloworld.py"""
                     }
                 }
             }
