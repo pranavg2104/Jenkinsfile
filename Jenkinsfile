@@ -20,7 +20,7 @@ pipeline {
                 steps{
                     script{
                         echo 'Deploying...'
-                        bat """python helloworld.py"""
+                        //bat """python helloworld.py"""
                     }
                 }
             }
