@@ -27,7 +27,7 @@ pipeline {
         }
     post {
     always {
-       emailext attachlog: true, to: 'rogerace339@gmail.com', cc: 'pranavgovekar2015@gmail.com',
+       emailext attachlog: true, to: 'rogerace339@gmail.com',
           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
           body: "${env.BUILD_URL} has result ${currentBuild.result}"
     }
