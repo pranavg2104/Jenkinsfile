@@ -20,6 +20,7 @@ pipeline {
                 steps{
                     script{
                         echo 'Deploying...'
+                        emailext attachLog: true, body: 'Build Information', subject: 'Build Information', to: 'pranavgovekar2015@gmail.com'
                     }
                 }
             }
