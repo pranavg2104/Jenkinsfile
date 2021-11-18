@@ -22,15 +22,15 @@ pipeline {
                         echo 'Deploying...'
                         //emailext attachLog: true, body: 'Build INFO', subject: 'Build INFO', to: 'pranavgovekar2015@gmail.com'
                         //mail bcc: '', body: 'BUILD INFO', cc: '', from: '', replyTo: '', subject: 'BUILD INFO', to: 'pranavgovekar2015@gmail.com'
-                        emailext attachLog: true, body: 'Build INFO', subject: 'Build INFO', to: 'rogerace339@gmail.com'
-                        mail bcc: '', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', cc: '', from: '', replyTo: '', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'pranavgovekar2015@gmail.com'
+                        //emailext attachLog: true, body: 'Build INFO', subject: 'Build INFO', to: 'rogerace339@gmail.com'
+                        //mail bcc: '', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', cc: '', from: '', replyTo: '', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'pranavgovekar2015@gmail.com'
                     }
                 }
             }
         }
     post {
     always {
-       mail to: 'pranavgovekar2015@gmail.com',
+       emailext to: 'pranavgovekar2015@gmail.com','rogerace339@gmail.com',
           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
           body: "${env.BUILD_URL} has result ${currentBuild.result}"
     }
