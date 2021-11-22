@@ -30,7 +30,8 @@ pipeline {
 //        mail to: 'pranav.govekar@kpit.com', cc: 'abdul.akram@kpit.com',
 //           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
 //           body: "${env.BUILD_URL} has result ${currentBuild.result}"        
-        emailext attachLog: true, body: "${env.BUILD_URL} has result ${currentBuild.result}" , subject: "Status of pipeline: ${currentBuild.fullDisplayName}", to: 'pranav.govekar@kpit.com',cc: 'abdul.akram@kpit.com'
+        emailext attachLog: true, body: "${env.BUILD_URL} has result ${currentBuild.result}" , subject: "Status of pipeline: ${currentBuild.fullDisplayName}", 
+            to: ['pranav.govekar@kpit.com','abdul.akram@kpit.com']
     }
   }
     }
