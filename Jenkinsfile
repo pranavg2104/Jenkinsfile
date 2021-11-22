@@ -30,10 +30,8 @@ pipeline {
 //        mail to: 'pranav.govekar@kpit.com', cc: 'abdul.akram@kpit.com',
 //           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
 //           body: "${env.BUILD_URL} has result ${currentBuild.result}"       
-        def paths = '[]' 
-        paths = readJSON file: "${WORKSPACE}\\location.json"
-        emailext attachLog: true, body: "${env.BUILD_URL} has result ${currentBuild.result}" , subject: "Status of pipeline: ${currentBuild.fullDisplayName}", 
-            to: "${paths.emails}"
+        emailext attachLog: true, body: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}: Check console output at $BUILD_URL to view the results." , subject: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!", 
+            to: 'pranav.govekar@kpit.com pranavg2104@gmail.com'
     }
   }
     }
