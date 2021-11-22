@@ -29,9 +29,11 @@ pipeline {
     always {
 //        mail to: 'pranav.govekar@kpit.com', cc: 'abdul.akram@kpit.com',
 //           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
-//           body: "${env.BUILD_URL} has result ${currentBuild.result}"        
+//           body: "${env.BUILD_URL} has result ${currentBuild.result}"       
+        def paths = '[]' 
+        paths = readJSON file: "${WORKSPACE}\\location.json"
         emailext attachLog: true, body: "${env.BUILD_URL} has result ${currentBuild.result}" , subject: "Status of pipeline: ${currentBuild.fullDisplayName}", 
-            to: 'abdul.akram@kpit.com pranav.govekar@kpit.com rogerace339@gmail.com'
+            to: "${paths.emails}"
     }
   }
     }
