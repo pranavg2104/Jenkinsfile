@@ -31,7 +31,7 @@ pipeline {
 //           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
 //           body: "${env.BUILD_URL} has result ${currentBuild.result}"        
         emailext attachLog: true, body: "${env.BUILD_URL} has result ${currentBuild.result}" , subject: "Status of pipeline: ${currentBuild.fullDisplayName}", 
-            to: ['pranav.govekar@kpit.com','abdul.akram@kpit.com']
+            to: 'abdul.akram@kpit.com'
     }
   }
     }
