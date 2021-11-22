@@ -1,7 +1,3 @@
 {
-"build":
-	{
-	"location":"D:\\Output",
-	"numberOfFiles":2
-	}
+	"emails": ['pranav.govekar@kpit.com' 'abdul.akram@kpit.com']
 }
