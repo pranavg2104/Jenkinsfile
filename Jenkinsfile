@@ -1,7 +1,9 @@
 pipeline {
     agent any  
      environment {
-         loc =  readJSON file: "${WORKSPACE}\\location.json"
+          def paths = '[]' 
+          paths = readJSON file: "${WORKSPACE}\\location.json"
+         //loc =  readJSON file: "${WORKSPACE}\\location.json"
      }  
     
         stages {
@@ -12,8 +14,8 @@ pipeline {
                         echo 'MIL SIL TESTING...'
                        // echo "${loc.emails}"
                         
-                        def paths = '[]' 
-                        paths = readJSON file: "${WORKSPACE}\\location.json"
+//                         def paths = '[]' 
+//                         paths = readJSON file: "${WORKSPACE}\\location.json"
                         
                         echo "${paths.emails}"
                         }
