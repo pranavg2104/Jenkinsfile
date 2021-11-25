@@ -4,7 +4,7 @@ pipeline {
             stage('mil-sil-testing') {
                 steps{
                     script{
-                        bat """ python helloworld.py"""                   
+                        bat """ python hellworld.py"""                   
                         echo 'MIL SIL TESTING...'
                         }
                     }
