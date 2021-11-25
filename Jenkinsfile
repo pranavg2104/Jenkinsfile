@@ -1,7 +1,7 @@
 pipeline {
     agent any  
      environment {
-         loc =  readJSON file: "location.json"
+         loc =  readJSON file: "${WORKSPACE}\\location.json"
      }  
     
         stages {
@@ -12,10 +12,10 @@ pipeline {
                         echo 'MIL SIL TESTING...'
                         echo "${loc}"
                         
-                        def paths = '[]' 
-                        paths = readJSON file: "${WORKSPACE}\\location.json"
+//                         def paths = '[]' 
+//                         paths = readJSON file: "${WORKSPACE}\\location.json"
                         
-                        echo "${paths}"
+//                         echo "${paths}"
                         }
                     }
                 }
@@ -33,7 +33,7 @@ pipeline {
             
                     emailext attachLog: false, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.''', 
                         subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
-                        to: "${loc.emails}"
+                        to: "${loc[emails]}"
            
 //                 echo 'Check the jenkinslog for the error, File not found or the email format error'
 //                 skipRemainingStages = true
