@@ -23,7 +23,7 @@ pipeline {
                         }
                         catch(err){
                              echo 'File not found or the email format error'
-                             skipRemainingStages = false
+                             skipRemainingStages = true
                              echo "next stage skip: = ${skipRemainingStages}"   
                         }
                     }
