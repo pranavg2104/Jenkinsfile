@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment{
-        def paths[]= readJSON file: "location.json"
+        def paths '[]'= readJSON file: "location.json"
     }
         
         stages {
