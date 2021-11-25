@@ -1,5 +1,11 @@
 pipeline {
     agent any
+    
+    environment{
+        def paths = '[]' 
+        paths = readJSON file: "${WORKSPACE}\\location.json"
+    }
+        
         stages {
             stage('mil-sil-testing') {
                 steps{
@@ -18,10 +24,7 @@ pipeline {
             }
         }
     post{
-        always{
-                def paths = '[]' 
-                paths = readJSON file: "${WORKSPACE}\\location.json"
-                        
+        always{                        
                 emailext attachLog: false, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.''', 
                         subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
                         to: "${paths.emails}"
