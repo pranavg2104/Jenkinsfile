@@ -26,7 +26,7 @@ pipeline {
                             echo 'Check the jenkinslog for the error, File not found or the email format error'
                             skipRemainingStages = true
                         }
-                        println "next stage skip: = ${skipRemainingStages}"                     
+                        echo "next stage skip: = ${skipRemainingStages}"                     
                     }
                 }
             }
