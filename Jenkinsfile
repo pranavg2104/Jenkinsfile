@@ -22,6 +22,7 @@ pipeline {
                 }
             }
         }
+}
 //     post{
 //         always{ 
             
@@ -37,4 +38,4 @@ pipeline {
 //             //will clean the workspace if any of previous stage fails, not build, aborted or unstable
 //         }
 //     }
-// }
+//}
