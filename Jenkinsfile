@@ -24,7 +24,7 @@ pipeline {
                         
                          emailext attachLog: false, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.''', 
                             subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
-                            to: "${data.emails}"
+                            to: "${data.emails[0]}"
                         }
                         catch(err){
                              echo 'File not found or the email format error'
