@@ -2,7 +2,7 @@ pipeline {
     agent any  
      environment {
           def paths = '[]' 
-          paths = readJSON file: "${WORKSPACE}\\location.json"
+         loc = readJSON file: "${WORKSPACE}\\location.json"
          //loc =  readJSON file: "${WORKSPACE}\\location.json"
      }  
     
@@ -12,6 +12,7 @@ pipeline {
                     script{
                         bat """ python helloworld.py"""                   
                         echo 'MIL SIL TESTING...'
+                        path=loc
                        // echo "${loc.emails}"
                         
 //                         def paths = '[]' 
