@@ -9,10 +9,10 @@ pipeline {
                         }
                     }
                 }
-            stage('report-email-notification'){
+            stage('report-generation'){
                 steps{
                     script{
-                        echo 'report-email-notification....'
+                        echo 'report-generation'
                     }
                 }
             }
