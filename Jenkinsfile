@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment{
-        def paths '[]'= readJSON file: "location.json"
+        def paths ='[]'
     }
         
         stages {
@@ -23,7 +23,8 @@ pipeline {
             }
         }
     post{
-        always{                        
+        always{        
+            paths =  readJSON file: "location.json"
                 emailext attachLog: false, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.''', 
                         subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
                         to: "${paths.emails}"
