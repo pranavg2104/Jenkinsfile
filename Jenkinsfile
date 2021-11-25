@@ -1,40 +1,30 @@
 pipeline {
     agent any
         stages {
-            stage('Build') {
+            stage('mil-sil-testing') {
                 steps{
                     script{
                         bat """ python helloworld.py"""                   
-                        echo 'Building..'
+                        echo 'MIL SIL TESTING'
                         }
                     }
                 }
-            stage('Test'){
+            stage('report-email-notification'){
                 steps{
                     script{
-                        echo 'Testing...'
+                        emailext """ attachLog: true, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.''', 
+                            subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS! has result ${currentBuild.result}', 
+                            to: 'pranav.govekar@kpit.com pranavg2104@gmail.com' """
+                        echo 'report-email-notification....'
                     }
                 }
             }
-            stage('Deploy'){
+            stage('post-clean'){
                 steps{
                     script{
-                        echo 'Deploying...'
-                        bat"""python helloworld.py"""
+                        echo 'POST CLEAN'
                     }
                 }
             }
         }
-    post {
-    always {
-//        mail to: 'pranav.govekar@kpit.com', cc: 'abdul.akram@kpit.com',
-//           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
-//           body: "${env.BUILD_URL} has result ${currentBuild.result}"       
-//         emailext attachLog: true, body: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}: Check console output at $BUILD_URL to view the results." , subject: "${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!", 
-//             to: 'pranav.govekar@kpit.com pranavg2104@gmail.com'
-        emailext attachLog: true, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
-
-Check console output at $BUILD_URL to view the results.''', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS! has result ${currentBuild.result}', to: 'pranav.govekar@kpit.com pranavg2104@gmail.com'
-    }
-  }
-    }
+   }
