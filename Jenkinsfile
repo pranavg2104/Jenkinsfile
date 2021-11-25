@@ -5,7 +5,7 @@ pipeline {
                 steps{
                     script{
                         bat """ python helloworld.py"""                   
-                        echo 'MIL SIL TESTING'
+                        echo 'MIL SIL TESTING...'
                         }
                     }
                 }
@@ -22,7 +22,7 @@ pipeline {
             stage('post-clean'){
                 steps{
                     script{
-                        echo 'POST CLEAN'
+                        echo 'POST CLEAN...'
                     }
                 }
             }
