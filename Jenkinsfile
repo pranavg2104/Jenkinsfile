@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment{
-        paths = readJSON file: "${WORKSPACE}\\location.json"
+        paths = readJSON file: "location.json"
     }
         
         stages {
