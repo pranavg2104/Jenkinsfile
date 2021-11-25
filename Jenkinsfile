@@ -16,6 +16,7 @@ pipeline {
                 steps{
                     script{
                         echo 'report-generation'
+                        echo "${data.emails}"
                          
                         try{
 //                          def paths = '[]' 
