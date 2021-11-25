@@ -12,9 +12,7 @@ pipeline {
             stage('report-email-notification'){
                 steps{
                     script{
-                        echo 'report-generation'
-                        echo "${data.emails}"
-                         
+                        echo 'report-generation'                       
                         try{
                          def paths = '[]' 
                          paths = readJSON file: "${WORKSPACE}\\location.json"
