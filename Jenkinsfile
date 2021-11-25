@@ -23,7 +23,7 @@ pipeline {
                             to: "${paths.emails}"
                         }
                         catch(err){
-                             echo 'Check the jenkinslog for the error, File not found or the email format error'
+                             echo 'File not found or the email format error'
                              skipRemainingStages = false
                              echo "next stage skip: = ${skipRemainingStages}"   
                         }
