@@ -1,8 +1,8 @@
 pipeline {
     agent any  
     enviornment{
-        def json = readFile(file:'location.json')
-        def data = new JsonSlurperClassic().parseText(json)
+        def data = readJSON file:'location.json'
+        echo "color: ${data.emails}"
     }
         stages {
             stage('mil-sil-testing') {
