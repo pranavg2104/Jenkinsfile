@@ -1,8 +1,7 @@
 pipeline {
     agent any  
-    enviornment{
+    environment {
         def data = readJSON file:'location.json'
-        echo "color: ${data.emails}"
     }
         stages {
             stage('mil-sil-testing') {
