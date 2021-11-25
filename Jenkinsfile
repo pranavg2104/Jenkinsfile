@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment{
-        def paths = '[]' 
+        //def paths = '[]' 
         paths = readJSON file: "${WORKSPACE}\\location.json"
     }
         
