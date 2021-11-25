@@ -1,10 +1,5 @@
 pipeline {
-    agent any
-    
-    environment{
-        def paths ='[]'
-    }
-        
+    agent any        
         stages {
             stage('mil-sil-testing') {
                 steps{
@@ -23,12 +18,15 @@ pipeline {
             }
         }
     post{
-        always{    
-            steps{
-            paths =  readJSON file: "location.json"
-                emailext attachLog: false, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.''', 
+        always{ 
+            stage('email-notification'){
+                steps{
+                    def paths='[]'
+                    paths =  readJSON file: "location.json"
+                    emailext attachLog: false, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.''', 
                         subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
                         to: "${paths.emails}"
+                 }
             }
            
 //                 echo 'Check the jenkinslog for the error, File not found or the email format error'
