@@ -13,19 +13,14 @@ pipeline {
                 steps{
                     script{
                         echo 'report-generation'
-                        
-                        try{
+                      
                         def paths = '[]' 
                         paths = readJSON file: "${WORKSPACE}\\location.json"
                         
                         emailext attachLog: false, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.''', 
                             subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', 
                             to: "${emails}"
-                        }
-                        catch(err){
-                            echo 'The build execution failed.Please refer the Jenkins console for log details'
-                            skipRemainingStages = true
-                        }
+                       
                         
                     }
                 }
