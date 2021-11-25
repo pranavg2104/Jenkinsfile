@@ -10,12 +10,12 @@ pipeline {
                     script{
                         bat """ python helloworld.py"""                   
                         echo 'MIL SIL TESTING...'
-                        echo "${loc}"
+                        echo "${loc.emails}"
                         
                         def paths = '[]' 
                         paths = readJSON file: "${WORKSPACE}\\location.json"
                         
-                        echo "${paths}"
+                        echo "${paths.emails}"
                         }
                     }
                 }
