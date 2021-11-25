@@ -24,7 +24,7 @@ pipeline {
                         }
                         catch(err){
                              echo 'Check the jenkinslog for the error, File not found or the email format error'
-                             skipRemainingStages = true
+                             skipRemainingStages = false
                              echo "next stage skip: = ${skipRemainingStages}"   
                         }
                     }
@@ -36,4 +36,5 @@ pipeline {
                 }
             }
         }
+    
 }
